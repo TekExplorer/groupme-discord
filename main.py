@@ -9,7 +9,7 @@ from constants import RUN_LOCAL
 flask_options = {}
 
 if not RUN_LOCAL:
-    flask_options = {'host': '0.0.0.0'}
+    flask_options = {'host': '0.0.0.0', 'port': os.getenv('PORT')}
 
 discord_bot.main()
 web_server.main(**flask_options)
